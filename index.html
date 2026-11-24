@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>브라보실버 | 시니어 맞춤형 수업 전문교육기관</title>
+<meta name="description" content="브라보실버는 주간보호센터·요양시설·노인복지관·경로당 등 어르신이 계신 곳으로 찾아가는 시니어 맞춤형 수업 전문교육기관입니다. 전문 강사진 파견, 훌라라 봉사단 무료공연, 생일상·현수막 무료 대여. 상담 010-3287-1007." />
+<meta name="theme-color" content="#1D4D3B" />
+<meta property="og:title" content="브라보실버 | 시니어 맞춤형 수업 전문교육기관" />
+<meta property="og:description" content="어르신이 계신 곳이라면 어디든 찾아갑니다. 맞춤형 수업·강사 파견, 무료공연, 생일상·현수막 무료 대여." />
+<meta property="og:type" content="website" />
+<style>
+  /* ===== Design tokens ===== */
+  :root{
+    --ivory:#FAF7F2;
+    --ivory-deep:#F2ECE1;
+    --white:#FFFFFF;
+    --green:#1D4D3B;
+    --green-700:#163B2D;
+    --green-900:#10281F;
+    --green-100:#E7EFE9;
+    --green-50:#F1F6F2;
+    --amber:#D9822B;
+    --amber-600:#A85E12;
+    --amber-soft:#FBEFE0;
+    --ink:#1E2421;
+    --ink-70:#4C5751;
+    --ink-55:#6B756F;
+    --line:rgba(29,77,59,.14);
+    --line-soft:rgba(29,77,59,.09);
+    --shadow-sm:0 1px 2px rgba(30,36,33,.05), 0 6px 16px -10px rgba(30,36,33,.18);
+    --shadow-md:0 2px 4px rgba(30,36,33,.04), 0 18px 40px -24px rgba(16,40,31,.35);
+    --shadow-lg:0 30px 70px -40px rgba(16,40,31,.5);
+    --radius-s:12px;
+    --radius:18px;
+    --radius-l:26px;
+    --font:"Pretendard","Apple SD Gothic Neo","Noto Sans KR","Malgun Gothic","Noto Sans CJK KR",system-ui,-apple-system,"Segoe UI",sans-serif;
+    --wrap:1180px;
+  }
+
+  *,*::before,*::after{box-sizing:border-box}
+  html{scroll-behavior:smooth; -webkit-text-size-adjust:100%}
+  body{
+    margin:0;
+    font-family:var(--font);
+    background:var(--ivory);
+    color:var(--ink);
+    font-size:17px;
+    line-height:1.7;
+    letter-spacing:-0.01em;
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  img,svg{max-width:100%}
+  a{color:inherit;text-decoration:none}
+  h1,h2,h3,h4,p,ul,ol,figure,blockquote{margin:0}
+  ul,ol{padding:0;list-style:none}
+  button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+  :focus-visible{outline:3px solid var(--amber);outline-offset:3px;border-radius:6px}
+
+  .wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 24px}
+  section[id]{scroll-margin-top:92px}
+  .skip{
+    position:absolute;left:16px;top:-60px;z-index:200;
+    background:var(--green);color:#fff;padding:12px 20px;border-radius:10px;font-weight:700;
+    transition:top .2s ease;
+  }
+  .skip:focus{top:12px}
+  .sr-only{
+    position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;
+    clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;
+  }
+
+  /* ===== Typography helpers ===== */
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:.82rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--amber-600);
+  }
+  .eyebrow::before{content:"";width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.7}
+  h2.section-title{
+    font-size:clamp(1.6rem,3.1vw,2.35rem);
+    line-height:1.35;font-weight:800;letter-spacing:-0.035em;
+    margin:14px 0 14px;
+  }
+  .section-lead{font-size:1.06rem;color:var(--ink-70);max-width:62ch}
+  .section{padding:92px 0}
+  .section--tight{padding:76px 0}
+  .section-head{margin-bottom:44px}
+  .section-head--center{text-align:center}
+  .section-head--center .section-lead{margin-left:auto;margin-right:auto}
+  .section-head--center .eyebrow::after{content:"";width:22px;height:2px;border-radius:2px;background:currentColor;opacity:.7}
+  .bg-deep{background:var(--ivory-deep)}
+  .accent{color:var(--green);position:relative;white-space:nowrap}
+  .accent::after{
+    content:"";position:absolute;left:-2px;right:-2px;bottom:.06em;height:.34em;
+    background:linear-gradient(90deg,rgba(217,130,43,.32),rgba(217,130,43,.14));
+    border-radius:3px;z-index:-1;
+  }
+
+  /* ===== Header ===== */
+  .site-header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(250,247,242,.86);
+    backdrop-filter:saturate(140%) blur(12px);
+    -webkit-backdrop-filter:saturate(140%) blur(12px);
+    border-bottom:1px solid transparent;
+    transition:border-color .25s ease, box-shadow .25s ease, background .25s ease;
+  }
+  .site-header.is-scrolled{border-bottom-color:var(--line-soft);box-shadow:0 10px 30px -26px rgba(16,40,31,.6)}
+  .header-inner{display:flex;align-items:center;justify-content:space-between;gap:24px;height:76px}
+  .brand{display:flex;align-items:center;gap:12px;min-width:0}
+  .brand-mark{width:42px;height:42px;flex:none}
+  .brand-text{display:flex;flex-direction:column;line-height:1.15}
+  .brand-name{font-size:1.22rem;font-weight:800;letter-spacing:-.03em;color:var(--green)}
+  .brand-sub{font-size:.72rem;font-weight:600;color:var(--ink-55);letter-spacing:.02em}
+
+  .nav{display:flex;align-items:center;gap:4px}
+  .nav a{
+    padding:10px 13px;border-radius:10px;font-size:.95rem;font-weight:600;color:var(--ink-70);
+    transition:background .2s ease,color .2s ease;white-space:nowrap;
+  }
+  .nav a:hover{background:var(--green-50);color:var(--green)}
+  .header-cta{display:flex;align-items:center;gap:10px}
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:9px;
+    padding:14px 24px;border-radius:14px;font-weight:700;font-size:1rem;letter-spacing:-.01em;
+    transition:transform .18s ease, box-shadow .18s ease, background .18s ease, color .18s ease, border-color .18s ease;
+    border:1.5px solid transparent;white-space:nowrap;
+  }
+  .btn:hover{transform:translateY(-1px)}
+  .btn:active{transform:translateY(0)}
+  .btn--primary{background:var(--green);color:#fff;box-shadow:0 12px 24px -16px rgba(29,77,59,.9)}
+  .btn--primary:hover{background:var(--green-700);box-shadow:0 16px 30px -16px rgba(29,77,59,.85)}
+  .btn--amber{background:var(--amber);color:#fff;box-shadow:0 12px 24px -16px rgba(194,113,31,.95)}
+  .btn--amber:hover{background:var(--amber-600)}
+  .btn--ghost{background:var(--white);color:var(--green);border-color:var(--line)}
+  .btn--ghost:hover{border-color:rgba(29,77,59,.35);background:#fff}
+  .btn--onDark{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.28)}
+  .btn--onDark:hover{background:rgba(255,255,255,.17)}
+  .btn--sm{padding:11px 18px;font-size:.95rem;border-radius:12px}
+  .btn .icon{width:20px;height:20px;flex:none}
+  .num{font-variant-numeric:tabular-nums;letter-spacing:.01em;white-space:nowrap}
+
+  .menu-toggle{
+    display:none;align-items:center;gap:8px;
+    padding:10px 14px;border:1.5px solid var(--line);border-radius:12px;
+    background:var(--white);font-weight:700;font-size:.95rem;color:var(--green);
+  }
+  .menu-toggle .bars{display:block;width:20px;height:2px;background:currentColor;position:relative;border-radius:2px}
+  .menu-toggle .bars::before,.menu-toggle .bars::after{
+    content:"";position:absolute;left:0;width:20px;height:2px;background:currentColor;border-radius:2px;
+    transition:transform .22s ease, top .22s ease;
+  }
+  .menu-toggle .bars::before{top:-6px}
+  .menu-toggle .bars::after{top:6px}
+  .menu-toggle[aria-expanded="true"] .bars{background:transparent}
+  .menu-toggle[aria-expanded="true"] .bars::before{top:0;transform:rotate(45deg)}
+  .menu-toggle[aria-expanded="true"] .bars::after{top:0;transform:rotate(-45deg)}
+
+  .mobile-menu{display:none;border-top:1px solid var(--line-soft);background:var(--ivory)}
+  .mobile-menu.is-open{display:block}
+  .mobile-menu ul{padding:10px 24px 20px}
+  .mobile-menu a{
+    display:block;padding:13px 4px;font-size:1.05rem;font-weight:600;color:var(--ink);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .mobile-menu .btn{width:100%;margin-top:16px}
+  .mobile-menu a.btn{color:#fff;border-bottom:0;justify-content:center;padding:15px 20px}
+  .mobile-menu a.btn:hover{background:var(--green-700)}
+
+  /* ===== Hero ===== */
+  .hero{position:relative;overflow:hidden;padding:66px 0 84px}
+  .hero::before{
+    content:"";position:absolute;right:-160px;top:-170px;width:620px;height:620px;border-radius:50%;
+    background:radial-gradient(circle at 40% 40%, rgba(217,130,43,.16), rgba(217,130,43,0) 62%);
+    pointer-events:none;
+  }
+  .hero::after{
+    content:"";position:absolute;left:-200px;bottom:-220px;width:520px;height:520px;border-radius:50%;
+    background:radial-gradient(circle at 50% 50%, rgba(29,77,59,.10), rgba(29,77,59,0) 65%);
+    pointer-events:none;
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1.06fr .94fr;gap:60px;align-items:center}
+  .hero h1{
+    font-size:clamp(2.15rem,4.4vw,3.5rem);
+    line-height:1.24;font-weight:800;letter-spacing:-.045em;
+    margin:20px 0 22px;
+  }
+  .hero h1 .line{display:block}
+  .hero-lead{font-size:1.1rem;color:var(--ink-70);max-width:35em;line-height:1.8}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin:32px 0 26px}
+  .hero-actions .btn{padding:16px 26px}
+  .hero-notes{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:.92rem;color:var(--ink-55);font-weight:600}
+  .hero-notes li{display:flex;align-items:center;gap:7px}
+  .check-dot{
+    display:inline-flex;align-items:center;justify-content:center;width:19px;height:19px;border-radius:50%;
+    background:var(--green-100);color:var(--green);flex:none;
+  }
+  .check-dot svg{width:12px;height:12px}
+
+  .hero-visual{position:relative;display:flex;justify-content:center}
+  .visit-card{
+    position:relative;width:100%;max-width:420px;background:var(--white);
+    border:1px solid var(--line-soft);border-radius:var(--radius-l);
+    box-shadow:var(--shadow-lg);padding:26px 26px 22px;
+  }
+  .visit-card-head{display:flex;align-items:center;gap:14px;padding-bottom:18px;border-bottom:1px dashed var(--line)}
+  .visit-card-head .brand-mark{width:46px;height:46px}
+  .visit-card-head strong{display:block;font-size:1.05rem;font-weight:800;letter-spacing:-.02em;color:var(--green)}
+  .visit-card-head span{font-size:.82rem;color:var(--ink-55);font-weight:600}
+  .visit-list{margin:16px 0 4px;display:grid;gap:2px}
+  .visit-list li{display:flex;align-items:center;gap:12px;padding:11px 2px;font-weight:650;font-size:1rem;color:var(--ink)}
+  .visit-list li + li{border-top:1px solid var(--line-soft)}
+  .visit-list .icon-tile{width:34px;height:34px;border-radius:10px;display:grid;place-items:center;background:var(--green-50);color:var(--green);flex:none}
+  .visit-list .icon-tile svg{width:19px;height:19px}
+  .visit-list .tag{margin-left:auto;font-size:.74rem;font-weight:700;color:var(--amber-600);background:var(--amber-soft);padding:4px 9px;border-radius:999px;letter-spacing:0}
+  .visit-card-foot{
+    margin-top:18px;padding:16px 18px;border-radius:16px;background:var(--green);color:#fff;
+    display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
+  }
+  .visit-card-foot span{font-size:.82rem;opacity:.82;font-weight:600}
+  .visit-card-foot a{font-size:1.18rem;font-weight:800;letter-spacing:.01em}
+  .hero-badge{
+    position:absolute;right:-10px;top:-15px;z-index:3;
+    background:var(--amber);color:#fff;border-radius:12px;padding:8px 14px;
+    font-size:.78rem;font-weight:800;letter-spacing:.01em;box-shadow:0 14px 26px -18px rgba(194,113,31,1);
+    white-space:nowrap;
+  }
+  .card-note{
+    display:flex;align-items:center;gap:9px;margin-top:14px;
+    padding:11px 14px;border-radius:12px;background:var(--amber-soft);
+    color:#8A4E14;font-size:.83rem;font-weight:700;line-height:1.5;
+  }
+  .card-note svg{width:17px;height:17px;flex:none;color:var(--amber-600)}
+
+  /* ===== Facility strip ===== */
+  .strip{background:var(--ivory-deep);border-top:1px solid var(--line-soft);border-bottom:1px solid var(--line-soft);padding:34px 0}
+  .strip-inner{display:flex;align-items:center;gap:24px;flex-wrap:wrap;justify-content:space-between}
+  .strip-label{font-weight:800;color:var(--green);font-size:.98rem;letter-spacing:-.02em;display:flex;align-items:center;gap:10px}
+  .strip-label svg{width:20px;height:20px;color:var(--amber)}
+  .strip-list{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{
+    display:inline-flex;align-items:center;gap:8px;background:var(--white);border:1px solid var(--line-soft);
+    border-radius:999px;padding:9px 16px;font-weight:650;font-size:.95rem;color:var(--ink);
+  }
+  .chip svg{width:17px;height:17px;color:var(--green)}
+  .strip-more{font-size:.92rem;color:var(--ink-55);font-weight:600}
+
+  /* ===== Message band ===== */
+  .message{background:var(--green);color:#fff;position:relative;overflow:hidden}
+  .message::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 82% 10%, rgba(217,130,43,.24), transparent 52%),
+               radial-gradient(circle at 8% 90%, rgba(255,255,255,.10), transparent 46%);
+    pointer-events:none;
+  }
+  .message-inner{position:relative;padding-top:78px;padding-bottom:78px;display:grid;grid-template-columns:auto 1fr;gap:44px;align-items:center}
+  .quote-mark{font-size:5.4rem;line-height:.6;color:rgba(217,130,43,.85);font-family:Georgia,serif;height:48px}
+  .message blockquote{font-size:clamp(1.28rem,2.5vw,1.85rem);line-height:1.62;font-weight:700;letter-spacing:-.03em;max-width:30em}
+  .message-cite{display:block;margin-top:18px;font-size:.98rem;font-weight:600;font-style:normal;color:rgba(255,255,255,.78);letter-spacing:0}
+  .message-cite strong{color:#fff;font-weight:800}
+
+  /* ===== Strengths ===== */
+  .strength-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .strength{
+    position:relative;background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius-l);
+    padding:34px 32px 32px;overflow:hidden;
+    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .strength::after{
+    content:"";position:absolute;right:-60px;top:-60px;width:160px;height:160px;border-radius:50%;
+    background:var(--green-50);opacity:0;transition:opacity .3s ease;
+  }
+  .strength:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(29,77,59,.2)}
+  .strength:hover::after{opacity:1}
+  .strength-num{
+    position:absolute;right:28px;top:26px;font-size:2.6rem;font-weight:800;letter-spacing:-.05em;
+    color:rgba(29,77,59,.09);line-height:1;font-variant-numeric:tabular-nums;
+  }
+  .icon-ring{
+    position:relative;width:58px;height:58px;border-radius:18px;display:grid;place-items:center;
+    background:var(--green-100);color:var(--green);margin-bottom:22px;
+  }
+  .icon-ring svg{width:28px;height:28px}
+  .strength:nth-child(even) .icon-ring{background:var(--amber-soft);color:var(--amber-600)}
+  .strength h3{position:relative;font-size:1.25rem;font-weight:800;letter-spacing:-.03em;margin-bottom:12px}
+  .strength p{position:relative;color:var(--ink-70);font-size:1rem;line-height:1.78}
+
+  /* ===== Programs ===== */
+  .filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px}
+  .filter-btn{
+    display:inline-flex;align-items:center;gap:8px;
+    padding:11px 20px;border-radius:999px;border:1.5px solid var(--line);
+    background:var(--white);color:var(--ink-70);font-weight:700;font-size:.96rem;
+    transition:background .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
+  }
+  .filter-btn:hover{border-color:rgba(29,77,59,.32);color:var(--green)}
+  .filter-btn[aria-pressed="true"]{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 10px 22px -16px rgba(29,77,59,.9)}
+  .filter-btn .count{font-size:.8rem;font-weight:800;opacity:.72;font-variant-numeric:tabular-nums}
+  .program-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .program{
+    display:flex;flex-direction:column;gap:14px;
+    background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius);
+    padding:28px 26px;transition:transform .22s ease, box-shadow .22s ease, border-color .22s ease, opacity .22s ease;
+  }
+  .program:hover{transform:translateY(-3px);box-shadow:var(--shadow-md);border-color:rgba(29,77,59,.2)}
+  .program.is-hidden{display:none}
+  .program-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+  .program .icon-tile{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;background:var(--green-50);color:var(--green);flex:none}
+  .program .icon-tile svg{width:24px;height:24px}
+  .cat{
+    font-size:.76rem;font-weight:800;color:var(--amber-600);background:var(--amber-soft);
+    padding:5px 11px;border-radius:999px;letter-spacing:0;white-space:nowrap;
+  }
+  .program h3{font-size:1.18rem;font-weight:800;letter-spacing:-.03em}
+  .program p{color:var(--ink-70);font-size:.97rem;line-height:1.72}
+  .program-note{
+    margin-top:26px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    background:var(--green-50);border:1px dashed rgba(29,77,59,.24);border-radius:var(--radius);
+    padding:18px 22px;color:var(--ink-70);font-size:.98rem;font-weight:600;
+  }
+  .program-note svg{width:20px;height:20px;color:var(--green);flex:none}
+  .program-note strong{color:var(--green);font-weight:800}
+  .filter-status{margin-top:14px;font-size:.9rem;color:var(--ink-55);font-weight:600}
+
+  /* ===== Process ===== */
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;counter-reset:step}
+  .step{position:relative;background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius-l);padding:34px 30px 30px}
+  .step::before{
+    counter-increment:step;content:counter(step,decimal-leading-zero);
+    display:inline-grid;place-items:center;width:44px;height:44px;border-radius:50%;
+    background:var(--green);color:#fff;font-weight:800;font-size:1rem;letter-spacing:.02em;margin-bottom:20px;
+  }
+  .step h3{font-size:1.16rem;font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+  .step p{color:var(--ink-70);font-size:.98rem;line-height:1.75}
+  .step a{color:var(--green);font-weight:800;text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:3px;text-decoration-color:rgba(29,77,59,.3)}
+  .step-connector{display:none}
+  .process-foot{margin-top:30px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+
+  /* ===== About ===== */
+  .about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:52px;align-items:center}
+  .profile-card{
+    background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius-l);
+    padding:36px 34px;box-shadow:var(--shadow-md);
+  }
+  .avatar{
+    width:84px;height:84px;border-radius:26px;display:grid;place-items:center;
+    background:linear-gradient(145deg,var(--green),var(--green-700));color:#fff;
+    font-size:2rem;font-weight:800;letter-spacing:-.04em;line-height:1;margin-bottom:22px;
+    box-shadow:0 16px 30px -20px rgba(16,40,31,.9);
+  }
+  .profile-card h3{font-size:1.5rem;font-weight:800;letter-spacing:-.03em}
+  .profile-role{color:var(--amber-600);font-weight:700;font-size:.96rem;margin-top:4px}
+  .role-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .role-tags li{font-size:.85rem;font-weight:700;color:var(--green);background:var(--green-50);border:1px solid var(--line-soft);padding:6px 12px;border-radius:999px}
+  .about-body p{color:var(--ink-70);font-size:1.04rem;line-height:1.85}
+  .about-body p + p{margin-top:16px}
+  .channels{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
+  .channel{
+    display:flex;flex-direction:column;gap:4px;background:var(--white);border:1px solid var(--line-soft);
+    border-radius:14px;padding:16px 18px;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease;
+  }
+  .channel:hover{border-color:rgba(29,77,59,.3);transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+  .channel .ch-top{display:flex;align-items:center;gap:8px;font-weight:800;font-size:.95rem;color:var(--green)}
+  .channel .ch-top svg{width:18px;height:18px}
+  .channel span{font-size:.82rem;color:var(--ink-55);font-weight:600;line-height:1.5}
+  .channel .arrow{margin-left:auto;color:var(--ink-55)}
+
+  /* ===== FAQ ===== */
+  .faq{max-width:900px;margin:0 auto}
+  .faq-item{background:var(--white);border:1px solid var(--line-soft);border-radius:var(--radius);margin-bottom:12px;overflow:hidden;transition:border-color .2s ease,box-shadow .2s ease}
+  .faq-item.is-open{border-color:rgba(29,77,59,.26);box-shadow:var(--shadow-sm)}
+  .faq-q{
+    width:100%;display:flex;align-items:center;justify-content:space-between;gap:18px;
+    padding:22px 26px;text-align:left;font-size:1.06rem;font-weight:750;letter-spacing:-.02em;
+  }
+  .faq-q .q-mark{color:var(--amber);font-weight:800;margin-right:10px}
+  .faq-icon{flex:none;width:26px;height:26px;border-radius:50%;background:var(--green-50);color:var(--green);display:grid;place-items:center;transition:transform .25s ease,background .25s ease}
+  .faq-icon svg{width:14px;height:14px}
+  .faq-item.is-open .faq-icon{transform:rotate(180deg);background:var(--green);color:#fff}
+  .faq-a{padding:0 26px 24px 60px;color:var(--ink-70);font-size:1rem;line-height:1.8}
+  .faq-a[hidden]{display:none}
+  .faq-a a{color:var(--green);font-weight:800;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(29,77,59,.3)}
+
+  /* ===== Contact ===== */
+  .contact{background:var(--green-900);color:#fff;position:relative;overflow:hidden}
+  .contact::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(circle at 12% 0%, rgba(217,130,43,.22), transparent 48%),
+               radial-gradient(circle at 92% 88%, rgba(255,255,255,.07), transparent 50%);
+    pointer-events:none;
+  }
+  .contact-inner{position:relative;display:grid;grid-template-columns:1.02fr .98fr;gap:56px;align-items:start;padding-top:92px;padding-bottom:92px}
+  .contact-inner > *{min-width:0}
+  .contact .eyebrow{color:#F0B071}
+  .contact h2{font-size:clamp(1.7rem,3.2vw,2.4rem);font-weight:800;letter-spacing:-.04em;line-height:1.35;margin:14px 0 16px}
+  .contact-lead{color:rgba(255,255,255,.76);font-size:1.04rem;line-height:1.8;max-width:34em}
+  .phone-block{margin:34px 0 26px}
+  .phone-label{display:block;font-size:.85rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .phone-link{
+    display:flex;align-items:center;gap:14px;margin-top:8px;
+    font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;letter-spacing:-.02em;color:#fff;
+    font-variant-numeric:tabular-nums;white-space:nowrap;
+  }
+  .phone-link .icon{width:clamp(24px,3vw,34px);height:auto;color:#F0B071;flex:none}
+  .phone-link:hover{color:#FCE3C6}
+  .contact-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .contact-meta{margin-top:28px;display:grid;gap:8px;font-size:.94rem;color:rgba(255,255,255,.66);font-weight:600}
+  .contact-meta div{display:flex;gap:10px;align-items:flex-start}
+  .contact-meta svg{width:17px;height:17px;flex:none;margin-top:4px;color:rgba(255,255,255,.5)}
+
+  .inquiry-card{background:#fff;color:var(--ink);border-radius:var(--radius-l);padding:28px;box-shadow:0 40px 80px -50px rgba(0,0,0,.8)}
+  .inquiry-card h3{font-size:1.14rem;font-weight:800;letter-spacing:-.03em;display:flex;align-items:center;gap:10px}
+  .inquiry-card h3 svg{width:20px;height:20px;color:var(--amber)}
+  .inquiry-card > p{font-size:.9rem;color:var(--ink-55);margin-top:8px;line-height:1.65}
+  .tpl{
+    width:100%;margin:16px 0 14px;padding:16px;border-radius:14px;border:1px solid var(--line);
+    background:var(--ivory);color:var(--ink);font-family:var(--font);font-size:.9rem;line-height:1.8;
+    resize:vertical;min-height:252px;
+  }
+  .tpl:focus{outline:3px solid rgba(217,130,43,.5);outline-offset:1px;border-color:var(--amber)}
+  .inquiry-actions{display:flex;flex-wrap:wrap;gap:10px}
+  .inquiry-actions .btn{flex:1 1 auto;padding:13px 18px;font-size:.95rem}
+  .copy-status{
+    margin-top:12px;font-size:.88rem;font-weight:700;color:var(--green);
+    display:flex;align-items:center;gap:6px;min-height:20px;
+  }
+  .copy-status svg{width:15px;height:15px}
+  .inquiry-foot{margin-top:16px;padding-top:16px;border-top:1px dashed var(--line);font-size:.83rem;color:var(--ink-55);line-height:1.65}
+
+  /* ===== Footer ===== */
+  .site-footer{background:#0C201A;color:rgba(255,255,255,.68);padding:40px 0 44px}
+  .footer-top{display:flex;flex-wrap:wrap;gap:24px;align-items:center;justify-content:space-between;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .footer-brand{display:flex;align-items:center;gap:12px}
+  .footer-brand .brand-name{color:#fff}
+  .footer-brand .brand-sub{color:rgba(255,255,255,.55)}
+  .footer-links{display:flex;flex-wrap:wrap;gap:8px 22px;font-size:.92rem;font-weight:600}
+  .footer-links a:hover{color:#fff}
+  .footer-bottom{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:space-between;font-size:.85rem;padding-top:22px;line-height:1.8}
+  .footer-bottom .num{color:rgba(255,255,255,.85);font-weight:700}
+
+  /* ===== Mobile CTA bar ===== */
+  .cta-bar{
+    position:fixed;left:0;right:0;bottom:0;z-index:120;
+    display:none;gap:10px;padding:12px 14px calc(12px + env(safe-area-inset-bottom));
+    background:rgba(250,247,242,.96);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border-top:1px solid var(--line);box-shadow:0 -14px 30px -22px rgba(16,40,31,.6);
+  }
+  .cta-bar .btn{flex:1;padding:15px 10px;font-size:.98rem;border-radius:13px}
+  .cta-bar .btn--primary{flex:1.55}
+
+  /* ===== Responsive ===== */
+  @media (max-width:1080px){
+    .hero-grid{gap:40px}
+    .nav a{padding:10px 10px;font-size:.9rem}
+    .header-cta .btn span.long{display:none}
+    .program-grid{grid-template-columns:repeat(2,1fr)}
+    .channels{grid-template-columns:1fr}
+    .about-grid{grid-template-columns:1fr;gap:32px}
+    .contact-inner{grid-template-columns:1fr;gap:40px}
+    .message-inner{grid-template-columns:1fr;gap:18px}
+    .quote-mark{height:auto;font-size:3.2rem;line-height:1;margin-bottom:-6px}
+  }
+  @media (max-width:920px){
+    .nav,.header-cta{display:none}
+    .menu-toggle{display:inline-flex}
+    .section{padding:72px 0}
+    .hero{padding:44px 0 64px}
+    .hero-grid{grid-template-columns:1fr;gap:44px}
+    .hero-visual{order:2}
+    .visit-card{max-width:460px}
+    .steps{grid-template-columns:1fr;gap:14px}
+    .strength-grid{grid-template-columns:1fr}
+    .cta-bar{display:flex}
+    body{padding-bottom:86px}
+    .strip-inner{justify-content:flex-start}
+  }
+  @media (max-width:600px){
+    body{font-size:17px}
+    .wrap{padding:0 20px}
+    .header-inner{height:66px}
+    .brand-mark{width:38px;height:38px}
+    .brand-name{font-size:1.1rem}
+    .brand-sub{font-size:.66rem}
+    .hero h1{font-size:clamp(1.95rem,8.2vw,2.4rem);letter-spacing:-.04em}
+    .hero-lead{font-size:1rem}
+    .hero-actions{flex-direction:column;align-items:stretch;gap:10px}
+    .hero-actions .btn{width:100%}
+    .hero-notes{font-size:.9rem;gap:8px 16px;color:var(--ink-70)}
+    .hero-badge{font-size:.72rem;padding:7px 11px;right:-6px;top:-13px}
+    .program-grid{grid-template-columns:1fr}
+    .section-head{margin-bottom:32px}
+    .strength{padding:26px 22px}
+    .strength-num{font-size:2.1rem;right:20px;top:20px}
+    .faq-q{padding:18px 18px;font-size:1rem;gap:10px}
+    .faq-a{padding:0 18px 20px 44px;font-size:.95rem}
+    .contact-inner{padding-top:68px;padding-bottom:56px}
+    .phone-link{font-size:1.95rem;gap:10px}
+    .phone-link .icon{width:24px}
+    .program{padding:22px 20px;gap:10px}
+    .program p{font-size:.94rem;line-height:1.68}
+    .program .icon-tile{width:42px;height:42px}
+    .tpl{min-height:236px;font-size:.86rem;line-height:1.75}
+    .section-head--center .section-lead{padding:0 4px}
+    .inquiry-card{padding:22px}
+    .inquiry-actions .btn{flex:1 1 100%}
+    .footer-bottom{flex-direction:column;gap:6px}
+    .step{padding:26px 22px}
+    .message-inner{padding-top:56px;padding-bottom:56px}
+    .quote-mark{font-size:3.6rem}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation-duration:.001ms !important;transition-duration:.001ms !important}
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#main">본문으로 바로 가기</a>
+
+<!-- ================= Header ================= -->
+<header class="site-header" id="top">
+  <div class="wrap header-inner">
+    <a class="brand" href="#top" aria-label="브라보실버 홈">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <rect x="1" y="1" width="46" height="46" rx="15" fill="#1D4D3B"/>
+        <path d="M24 33.4c-6.4-4.1-11.4-7.9-11.4-12.5a6.1 6.1 0 0 1 11.4-3.1 6.1 6.1 0 0 1 11.4 3.1c0 4.6-5 8.4-11.4 12.5z" fill="#D9822B"/>
+        <path d="M17 37.4h14" stroke="#FAF7F2" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+      </svg>
+      <span class="brand-text">
+        <span class="brand-name">브라보실버</span>
+        <span class="brand-sub">시니어 맞춤형 수업 전문교육기관</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="주요 메뉴">
+      <a href="#strengths">강점</a>
+      <a href="#programs">프로그램</a>
+      <a href="#process">이용 절차</a>
+      <a href="#about">대표 소개</a>
+      <a href="#faq">자주 묻는 질문</a>
+    </nav>
+
+    <div class="header-cta">
+      <a class="btn btn--ghost btn--sm" href="sms:010-3287-1007">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.8-.4L4 21l1.6-4.4A8.2 8.2 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg>
+        문자 문의
+      </a>
+      <a class="btn btn--primary btn--sm" href="tel:010-3287-1007">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+        <span class="long">전화 상담&nbsp;</span><span class="num">010-3287-1007</span>
+      </a>
+    </div>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobileMenu" id="menuToggle">
+      <span class="bars" aria-hidden="true"></span>
+      메뉴
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#strengths">브라보실버 강점</a></li>
+      <li><a href="#programs">수업 프로그램</a></li>
+      <li><a href="#process">이용 절차</a></li>
+      <li><a href="#about">대표 소개</a></li>
+      <li><a href="#faq">자주 묻는 질문</a></li>
+      <li><a href="#contact">상담 문의</a></li>
+      <li>
+        <a class="btn btn--primary" href="tel:010-3287-1007">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+          전화 상담 010-3287-1007
+        </a>
+      </li>
+    </ul>
+  </div>
+</header>
+
+<main id="main">
+  <!-- ================= Hero ================= -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <span class="eyebrow">시니어 맞춤형 수업 전문교육기관</span>
+        <h1>
+          <span class="line">어르신이 계신 곳이라면,</span>
+          <span class="line"><span class="accent">어디든</span> 찾아갑니다.</span>
+        </h1>
+        <p class="hero-lead">
+          브라보실버는 주간보호센터·요양시설·노인복지관·경로당 등 어르신들이 계신 곳으로
+          직접 찾아가는 출강·강사 파견 교육기관입니다. 전문자격을 갖춘 강사진과
+          기관에 꼭 맞춘 수업으로 어르신의 하루에 즐거움을 더합니다.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+            전화 상담 <span class="num">010-3287-1007</span>
+          </a>
+          <a class="btn btn--ghost" href="sms:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.8-.4L4 21l1.6-4.4A8.2 8.2 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg>
+            문자로 문의하기
+          </a>
+        </div>
+        <ul class="hero-notes">
+          <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>전문 강사진 파견</li>
+          <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>훌라라 봉사단 무료공연</li>
+          <li><span class="check-dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg></span>생일상·현수막 무료 대여</li>
+        </ul>
+      </div>
+
+      <div class="hero-visual">
+        <div class="visit-card">
+          <span class="hero-badge">찾아가는 출강 · 강사 파견</span>
+          <div class="visit-card-head">
+            <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+              <rect x="1" y="1" width="46" height="46" rx="15" fill="#1D4D3B"/>
+              <path d="M24 33.4c-6.4-4.1-11.4-7.9-11.4-12.5a6.1 6.1 0 0 1 11.4-3.1 6.1 6.1 0 0 1 11.4 3.1c0 4.6-5 8.4-11.4 12.5z" fill="#D9822B"/>
+              <path d="M17 37.4h14" stroke="#FAF7F2" stroke-width="2.2" stroke-linecap="round" opacity=".45"/>
+            </svg>
+            <div>
+              <strong>브라보실버 출강 안내</strong>
+              <span>어르신이 계신 곳이면 어디든</span>
+            </div>
+          </div>
+          <ul class="visit-list">
+            <li>
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.2 12 3l9 7.2V20a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 20z"/><path d="M12 15.6c-1.9-1.3-3.4-2.4-3.4-3.8a1.9 1.9 0 0 1 3.4-1 1.9 1.9 0 0 1 3.4 1c0 1.4-1.5 2.5-3.4 3.8z"/></svg></span>
+              주간보호센터
+              <span class="tag">어르신 돌봄</span>
+            </li>
+            <li>
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6.5A2.5 2.5 0 0 1 6.5 4h7A2.5 2.5 0 0 1 16 6.5V21"/><path d="M2 21h20"/><path d="M16 10h2.5A2.5 2.5 0 0 1 21 12.5V21"/><path d="M7 8h6M7 12h6M7 16h3"/></svg></span>
+              요양시설
+              <span class="tag">시설 출강</span>
+            </li>
+            <li>
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.6 20.4a6.4 6.4 0 0 1 12.8 0"/><circle cx="17.4" cy="9.4" r="2.6"/><path d="M15.6 14.6a5.4 5.4 0 0 1 6 4.8"/></svg></span>
+              노인복지관
+              <span class="tag">프로그램</span>
+            </li>
+            <li>
+              <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9.5 21v-6h5v6"/></svg></span>
+              경로당
+              <span class="tag">찾아가는 수업</span>
+            </li>
+          </ul>
+          <div class="card-note">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6l11-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="16" r="2.5"/></svg>
+            훌라라 봉사단 무료공연 · 생일상·현수막 무료 대여
+          </div>
+          <div class="visit-card-foot">
+            <span>상담 · 출강 문의</span>
+            <a class="num" href="tel:010-3287-1007">010-3287-1007</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Facility strip ================= -->
+  <section class="strip" aria-label="출강 대상 기관">
+    <div class="wrap strip-inner">
+      <p class="strip-label">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8C19.5 16.4 12 21 12 21z"/></svg>
+        이런 곳에서 함께합니다
+      </p>
+      <ul class="strip-list">
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 10.2 12 3l9 7.2V20a1.8 1.8 0 0 1-1.8 1.8H4.8A1.8 1.8 0 0 1 3 20z"/></svg>주간보호센터</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 21V6.5A2.5 2.5 0 0 1 6.5 4h7A2.5 2.5 0 0 1 16 6.5V21"/><path d="M2 21h20"/><path d="M16 10h2.5A2.5 2.5 0 0 1 21 12.5V21"/></svg>요양시설</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.2"/><path d="M2.6 20.4a6.4 6.4 0 0 1 12.8 0"/><circle cx="17.4" cy="9.4" r="2.6"/></svg>노인복지관</li>
+        <li class="chip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9.5 12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1z"/><path d="M9.5 21v-6h5v6"/></svg>경로당</li>
+      </ul>
+      <p class="strip-more">그 밖에 어르신이 계신 곳이면 어디든 찾아갑니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= Message band ================= -->
+  <section class="message" aria-label="브라보실버의 약속">
+    <div class="wrap message-inner">
+      <span class="quote-mark" aria-hidden="true">“</span>
+      <blockquote>
+        사랑과 정성이 가득한 브라보실버는 맞춤형 수업 전문교육기관으로서
+        어르신들과 행복한 동행을 약속합니다.
+        <cite class="message-cite"><strong>브라보실버 대표 홍병식</strong></cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- ================= Strengths ================= -->
+  <section class="section" id="strengths">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">브라보실버의 강점</span>
+        <h2 class="section-title">믿고 맡길 수 있는 네 가지 이유</h2>
+        <p class="section-lead">강사진부터 프로그램, 작은 이벤트까지. 기관의 준비 부담은 줄이고 어르신의 즐거움은 키웁니다.</p>
+      </div>
+
+      <div class="strength-grid">
+        <article class="strength">
+          <span class="strength-num" aria-hidden="true">01</span>
+          <div class="icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8.4" r="3.6"/><path d="M5 20.2a7 7 0 0 1 14 0"/><path d="m18.6 3.4 1 1.9 2.1.3-1.5 1.5.4 2.1-2-1-1.9 1 .3-2.1-1.5-1.5 2.1-.3z"/></svg>
+          </div>
+          <h3>우수한 강사진</h3>
+          <p>전문자격증을 취득한 실력 우수한 강사진을 다수 확보하고 있습니다. 다년간의 현장 경력을 보유한 전문 강사진이 기관으로 파견됩니다.</p>
+        </article>
+
+        <article class="strength">
+          <span class="strength-num" aria-hidden="true">02</span>
+          <div class="icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V6.5l11-2v11"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M3 21h3"/></svg>
+          </div>
+          <h3>훌라라 봉사단 무료공연</h3>
+          <p>교육기관 자체적으로 운영하는 훌라라 봉사단 단원들이 기관으로 찾아가 무료공연을 선보입니다. 준비 없이도 특별한 하루를 만들어 드립니다.</p>
+        </article>
+
+        <article class="strength">
+          <span class="strength-num" aria-hidden="true">03</span>
+          <div class="icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="2"/><rect x="13.5" y="3" width="7.5" height="7.5" rx="2"/><rect x="3" y="13.5" width="7.5" height="7.5" rx="2"/><path d="M17.2 13.6v6.8M13.8 17h6.8"/></svg>
+          </div>
+          <h3>다양한 맞춤형 수업</h3>
+          <p>어르신들에게 인기 있는 프로그램을 기관의 대상과 인원, 일정에 맞춰 구성합니다. 숟가락난타·노래교실·웃음치료·인지놀이·인지미술·인지체조 등.</p>
+        </article>
+
+        <article class="strength">
+          <span class="strength-num" aria-hidden="true">04</span>
+          <div class="icon-ring">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20.5v-5a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v5"/><path d="M3 20.5h18"/><path d="M7.5 13.5V11a1.5 1.5 0 0 1 1.5-1.5h6A1.5 1.5 0 0 1 16.5 11v2.5"/><path d="M12 9.5V6.5"/><path d="M12 3.2c.9.8.9 2 0 2.6-.9-.6-.9-1.8 0-2.6z"/></svg>
+          </div>
+          <h3>생일상 · 현수막 무료 대여</h3>
+          <p>기관에서 어르신 행사를 준비하실 때 생일잔치상과 현수막을 무료로 대여해 드립니다. 준비의 번거로움은 덜고 잔치의 기쁨은 더합니다.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Programs ================= -->
+  <section class="section bg-deep" id="programs">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">수업 프로그램</span>
+        <h2 class="section-title">어르신께 인기 있는 수업</h2>
+        <p class="section-lead">기관의 상황과 어르신의 기호에 맞춰 골라 드립니다. 원하시는 수업은 상담 때 새로 제안해 드릴 수 있습니다.</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="프로그램 분류">
+        <button class="filter-btn" type="button" data-filter="all" aria-pressed="true">전체 <span class="count">6</span></button>
+        <button class="filter-btn" type="button" data-filter="rhythm" aria-pressed="false">음악 · 리듬 <span class="count">2</span></button>
+        <button class="filter-btn" type="button" data-filter="cognition" aria-pressed="false">인지 · 미술 <span class="count">2</span></button>
+        <button class="filter-btn" type="button" data-filter="health" aria-pressed="false">웃음 · 건강 <span class="count">2</span></button>
+      </div>
+
+      <div class="program-grid" id="programGrid">
+        <article class="program" data-cat="rhythm">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3v18"/><path d="M5 4h5l-1.2 4H5"/><path d="M12 3.4c2.2.8 3.4 2.4 3.4 4.4 0 1.4-.6 2.6-1.7 3.5"/><circle cx="16.5" cy="16.5" r="2.5"/><path d="M19 16.5V10"/></svg></span>
+            <span class="cat">음악 · 리듬</span>
+          </div>
+          <h3>숟가락난타</h3>
+          <p>생활 속 도구인 숟가락으로 장단을 맞추며 모두가 함께 어울리는 리듬 수업입니다.</p>
+        </article>
+
+        <article class="program" data-cat="rhythm">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 17.5V5.6l11-1.6v11.4"/><circle cx="6.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.4" r="2.5"/><path d="M9 9.4 20 8"/></svg></span>
+            <span class="cat">음악 · 리듬</span>
+          </div>
+          <h3>노래교실</h3>
+          <p>익숙한 노래를 함께 부르며 추억을 나누고 목소리를 다시 펴는 시간입니다.</p>
+        </article>
+
+        <article class="program" data-cat="health">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="8.6"/><path d="M8.4 9.2c.8 1.1 1.2 1.9 1.2 2.8a2.4 2.4 0 0 0 4.8 0c0-.9.4-1.7 1.2-2.8"/><path d="M9.2 15.4c1.7 1.1 3.9 1.1 5.6 0"/></svg></span>
+            <span class="cat">웃음 · 건강</span>
+          </div>
+          <h3>웃음치료</h3>
+          <p>함께 웃고 몸을 흔들며 굳은 마음과 긴장을 부드럽게 풀어 드리는 프로그램입니다.</p>
+        </article>
+
+        <article class="program" data-cat="cognition">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.4 3.6a3 3 0 0 0-3 3v.6a3 3 0 0 0-1.2 5.6 3 3 0 0 0 1.6 5.4 3 3 0 0 0 5.2 1.7V3.6z"/><path d="M14.6 3.6a3 3 0 0 1 3 3v.6a3 3 0 0 1 1.2 5.6 3 3 0 0 1-1.6 5.4 3 3 0 0 1-5.2 1.7"/></svg></span>
+            <span class="cat">인지 · 미술</span>
+          </div>
+          <h3>인지놀이</h3>
+          <p>놀이 규칙을 함께 익히며 즐겁게 머리를 쓰는 인지 활동 수업입니다.</p>
+        </article>
+
+        <article class="program" data-cat="cognition">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a9 9 0 1 0 0 18c1.4 0 2-.8 2-1.7 0-1.6-1.5-1.7-1.5-3 0-1 .7-1.8 1.9-1.8H16a5 5 0 0 0 5-5C21 5.9 17 3 12 3z"/><circle cx="8" cy="9.4" r="1.2"/><circle cx="12" cy="7.2" r="1.2"/><circle cx="16" cy="9.2" r="1.2"/><circle cx="7.6" cy="14" r="1.2"/></svg></span>
+            <span class="cat">인지 · 미술</span>
+          </div>
+          <h3>인지미술</h3>
+          <p>손으로 그리고 만들며 집중하고 표현하는 즐거움을 느끼는 미술 수업입니다.</p>
+        </article>
+
+        <article class="program" data-cat="health">
+          <div class="program-top">
+            <span class="icon-tile"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="13" cy="4.6" r="1.8"/><path d="M13 7.6v4.6l3.6 2.2"/><path d="m13 12.2-3.8 2.6L7 19.6"/><path d="m12.6 9.4-3.4.8-2 3"/><path d="M16.4 20.2c-1.6-1.2-1.8-3.2-.2-4.2"/></svg></span>
+            <span class="cat">웃음 · 건강</span>
+          </div>
+          <h3>인지체조</h3>
+          <p>앉아서도 부담 없이 따라 할 수 있는, 어르신 눈높이의 신체 활동입니다.</p>
+        </article>
+      </div>
+
+      <p class="filter-status" id="filterStatus" role="status" aria-live="polite">전체 6개 프로그램을 보여 드리고 있습니다.</p>
+
+      <div class="program-note">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.2 14.2 9l6.1.5-4.6 4 1.4 6-5.1-3.2-5.1 3.2 1.4-6-4.6-4L9.8 9z"/></svg>
+        <span><strong>기관 맞춤 구성</strong> — 대상 인원과 일정, 어르신의 기호에 맞춰 프로그램과 강사를 매칭해 드립니다.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Process ================= -->
+  <section class="section" id="process">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">이용 절차</span>
+        <h2 class="section-title">상담부터 출강까지, 세 단계면 충분합니다</h2>
+        <p class="section-lead">복잡한 서류 없이 전화 한 통으로 시작합니다. 기관의 상황을 먼저 듣고 알맞은 수업을 제안해 드립니다.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <h3>전화 · 문자 상담</h3>
+          <p>기관의 상황과 어르신 규모, 원하시는 수업을 편하게 말씀해 주세요. <a href="tel:010-3287-1007" class="num">010-3287-1007</a>로 전화 또는 문자 주시면 바로 상담해 드립니다.</p>
+        </li>
+        <li class="step">
+          <h3>프로그램 · 강사 매칭</h3>
+          <p>기관 대상과 인원, 일정에 맞춰 알맞은 프로그램과 강사를 매칭해 드립니다. 생일상·현수막 대여나 봉사단 공연도 이때 함께 정하실 수 있습니다.</p>
+        </li>
+        <li class="step">
+          <h3>현장 출강 및 사후 관리</h3>
+          <p>약속한 날짜에 강사가 기관으로 찾아가 수업을 진행합니다. 수업이 끝난 뒤에도 사후 관리를 이어가며 다음 수업을 함께 준비합니다.</p>
+        </li>
+      </ol>
+
+      <div class="process-foot">
+        <a class="btn btn--amber" href="tel:010-3287-1007">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+          지금 전화 상담하기
+        </a>
+        <a class="btn btn--ghost" href="#contact">문의 문구 복사해서 문자 보내기</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= About ================= -->
+  <section class="section bg-deep" id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="eyebrow">대표 소개</span>
+        <h2 class="section-title">브라보실버를 이끄는 사람</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="profile-card">
+          <div class="avatar" aria-hidden="true">홍</div>
+          <h3>홍병식</h3>
+          <p class="profile-role">브라보실버 대표</p>
+          <ul class="role-tags">
+            <li>행사 진행 사회자</li>
+            <li>강사</li>
+            <li>한국평생교육진흥원 원장</li>
+            <li>실버강사 양성</li>
+            <li>행사 MC</li>
+          </ul>
+        </div>
+
+        <div class="about-body">
+          <p>
+            홍병식 대표는 행사 진행 사회자이자 강사로 활동하며, 시니어 맞춤형 수업 전문교육기관
+            <strong>브라보실버</strong>를 운영하고 있습니다. 한국평생교육진흥원 원장을 겸임하고 있고,
+            실버강사 양성과 행사 MC로도 활동하고 있습니다.
+          </p>
+          <p>
+            무대와 강단에서 어르신을 만나 온 경험을 바탕으로, 기관마다 다른 상황에 맞는 수업을
+            설계합니다. 브라보실버의 수업과 활동 소식은 블로그·카페·유튜브에서도 확인하실 수 있습니다.
+          </p>
+
+          <div class="channels">
+            <a class="channel" href="https://blog.naver.com/kkbyeong" target="_blank" rel="noopener">
+              <span class="ch-top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v13H4z"/><path d="M8 9h3.6L8 15.5h3.8"/></svg>
+                네이버 블로그
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+              <span>수업 현장과 활동 소식</span>
+            </a>
+            <a class="channel" href="https://cafe.naver.com/silver8899" target="_blank" rel="noopener">
+              <span class="ch-top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10H8.5L4 19z"/><path d="M8 9.5h8M8 12h5"/></svg>
+                네이버 카페
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+              <span>홍병식교수의 실버여가문화연구소</span>
+            </a>
+            <a class="channel" href="https://www.youtube.com/@HONGBYEONGSIK" target="_blank" rel="noopener">
+              <span class="ch-top">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.8" y="5.6" width="18.4" height="12.8" rx="3.6"/><path d="m10.4 9.4 4.6 2.6-4.6 2.6z"/></svg>
+                유튜브
+                <svg class="arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+              </span>
+              <span>영상으로 보는 브라보실버</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= FAQ ================= -->
+  <section class="section" id="faq">
+    <div class="wrap">
+      <div class="section-head section-head--center">
+        <span class="eyebrow">자주 묻는 질문</span>
+        <h2 class="section-title">기관 담당자분들이 자주 물으십니다</h2>
+        <p class="section-lead">궁금한 점은 전화·문자로 언제든 물어보세요. 상담은 무료입니다.</p>
+      </div>
+
+      <div class="faq">
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a1" id="faq-q1">
+              <span><span class="q-mark" aria-hidden="true">Q</span>어떤 기관에서 이용할 수 있나요?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a1" role="region" aria-labelledby="faq-q1" hidden>
+            주간보호센터, 요양시설, 노인복지관, 경로당 등 어르신들이 계신 곳이면 어디든 찾아갑니다.
+            기관 규모나 인원에 관계없이 상담해 드리고 있으니 편하게 연락 주세요.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a2" id="faq-q2">
+              <span><span class="q-mark" aria-hidden="true">Q</span>수업 프로그램은 어떻게 정하나요?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a2" role="region" aria-labelledby="faq-q2" hidden>
+            상담 때 기관의 대상과 인원, 일정, 어르신의 기호를 알려 주시면 그에 맞춰 프로그램과 강사를
+            매칭해 드립니다. 숟가락난타, 노래교실, 웃음치료, 인지놀이, 인지미술, 인지체조 등이 대표적인
+            수업입니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a3" id="faq-q3">
+              <span><span class="q-mark" aria-hidden="true">Q</span>강사는 어떤 분들인가요?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a3" role="region" aria-labelledby="faq-q3" hidden>
+            전문자격증을 취득하고 다년간 현장 경력을 쌓은 강사진이 파견됩니다. 기관의 일정과 어르신의
+            상태에 맞는 강사를 배정해 드립니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a4" id="faq-q4">
+              <span><span class="q-mark" aria-hidden="true">Q</span>훌라라 봉사단 공연도 신청할 수 있나요?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a4" role="region" aria-labelledby="faq-q4" hidden>
+            네. 교육기관이 자체적으로 운영하는 훌라라 봉사단이 기관으로 찾아가 무료공연을 진행합니다.
+            공연 일정은 상담 때 함께 조율해 드립니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a5" id="faq-q5">
+              <span><span class="q-mark" aria-hidden="true">Q</span>생일상과 현수막 대여는 어떻게 신청하나요?</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a5" role="region" aria-labelledby="faq-q5" hidden>
+            기관에서 어르신 행사를 준비하실 때 말씀해 주시면 생일잔치상과 현수막을 무료로 대여해 드립니다.
+            수업 일정과 함께 알려 주시면 한 번에 준비해 드릴 수 있습니다.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <h3 style="margin:0">
+            <button class="faq-q" type="button" aria-expanded="false" aria-controls="faq-a6" id="faq-q6">
+              <span><span class="q-mark" aria-hidden="true">Q</span>비용과 가능한 지역이 궁금합니다.</span>
+              <span class="faq-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></span>
+            </button>
+          </h3>
+          <div class="faq-a" id="faq-a6" role="region" aria-labelledby="faq-q6" hidden>
+            수업 내용과 일정, 기관 상황에 따라 달라질 수 있어 전화나 문자로 상담해 드리고 있습니다.
+            <a href="tel:010-3287-1007" class="num">010-3287-1007</a>로 연락 주시면 기관에 맞는 조건을 안내해 드립니다.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= Contact ================= -->
+  <section class="contact" id="contact">
+    <div class="wrap contact-inner">
+      <div>
+        <span class="eyebrow">상담 문의</span>
+        <h2>지금 전화 한 통이면<br>충분합니다</h2>
+        <p class="contact-lead">
+          기관명과 대상 인원, 희망 일정만 알려 주세요.
+          어르신께 맞는 수업과 강사를 함께 준비해 드립니다.
+        </p>
+
+        <div class="phone-block">
+          <span class="phone-label">전화 · 문자 상담</span>
+          <a class="phone-link" href="tel:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+            010-3287-1007
+          </a>
+        </div>
+
+        <div class="contact-actions">
+          <a class="btn btn--amber" href="tel:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+            전화 걸기
+          </a>
+          <a class="btn btn--onDark" href="sms:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.8-.4L4 21l1.6-4.4A8.2 8.2 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg>
+            문자 보내기
+          </a>
+        </div>
+
+        <div class="contact-meta">
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg>
+            <span>상담 시간에 관계없이 문자를 남겨 주시면 확인 후 연락드립니다.</span>
+          </div>
+          <div>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 8a4.3 4.3 0 0 1 7.5 2.8C19.5 16.4 12 21 12 21z"/></svg>
+            <span>주간보호센터 · 요양시설 · 노인복지관 · 경로당 등 어르신이 계신 곳이면 어디든</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="inquiry-card">
+        <h3>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.4"/><path d="M16 8V5.6A1.6 1.6 0 0 0 14.4 4H5.6A1.6 1.6 0 0 0 4 5.6v8.8A1.6 1.6 0 0 0 5.6 16H8"/></svg>
+          문의 문구 복사
+        </h3>
+        <p>아래 문구를 복사해 문자나 카카오톡으로 보내 주시면 상담이 빠릅니다. 페이지에서 바로 전송되지는 않습니다.</p>
+        <label class="sr-only" for="inquiryTemplate">문의 문구</label>
+        <textarea class="tpl" id="inquiryTemplate" readonly spellcheck="false">안녕하세요, 브라보실버 수업(강사 파견) 문의드립니다.
+
+· 기관명:
+· 기관 종류: 주간보호센터 / 요양시설 / 노인복지관 / 경로당 / 기타
+· 대상 인원:
+· 희망 일정:
+· 관심 프로그램:
+· 연락처:</textarea>
+        <div class="inquiry-actions">
+          <button class="btn btn--primary" type="button" id="copyBtn">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2.4"/><path d="M16 8V5.6A1.6 1.6 0 0 0 14.4 4H5.6A1.6 1.6 0 0 0 4 5.6v8.8A1.6 1.6 0 0 0 5.6 16H8"/></svg>
+            문구 복사하기
+          </button>
+          <a class="btn btn--ghost" href="sms:010-3287-1007">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.8-.4L4 21l1.6-4.4A8.2 8.2 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg>
+            문자 앱 열기
+          </a>
+        </div>
+        <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
+        <p class="inquiry-foot">
+          복사한 문구를 문자 앱에 붙여 넣고 빈칸을 채워 보내 주세요.
+          급하신 경우 <a href="tel:010-3287-1007" style="color:var(--green);font-weight:800" class="num">010-3287-1007</a>로 바로 전화 주셔도 됩니다.
+        </p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ================= Footer ================= -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true" style="width:38px;height:38px">
+          <rect x="1" y="1" width="46" height="46" rx="15" fill="#FAF7F2"/>
+          <path d="M24 33.4c-6.4-4.1-11.4-7.9-11.4-12.5a6.1 6.1 0 0 1 11.4-3.1 6.1 6.1 0 0 1 11.4 3.1c0 4.6-5 8.4-11.4 12.5z" fill="#D9822B"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">브라보실버</span>
+          <span class="brand-sub">시니어 맞춤형 수업 전문교육기관</span>
+        </span>
+      </div>
+
+      <nav class="footer-links" aria-label="바로가기">
+        <a href="#strengths">강점</a>
+        <a href="#programs">프로그램</a>
+        <a href="#process">이용 절차</a>
+        <a href="#about">대표 소개</a>
+        <a href="#faq">자주 묻는 질문</a>
+        <a href="https://blog.naver.com/kkbyeong" target="_blank" rel="noopener">블로그</a>
+        <a href="https://cafe.naver.com/silver8899" target="_blank" rel="noopener">카페</a>
+        <a href="https://www.youtube.com/@HONGBYEONGSIK" target="_blank" rel="noopener">유튜브</a>
+      </nav>
+    </div>
+
+    <div class="footer-bottom">
+      <div>
+        브라보실버 · 대표 홍병식 · 상담 <a href="tel:010-3287-1007" class="num">010-3287-1007</a>
+      </div>
+      <div>© 2026 브라보실버. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<!-- ================= Mobile sticky CTA ================= -->
+<div class="cta-bar" role="group" aria-label="빠른 상담">
+  <a class="btn btn--primary" href="tel:010-3287-1007">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 16.9v2.6a2 2 0 0 1-2.2 2 19.6 19.6 0 0 1-8.5-3 19.3 19.3 0 0 1-6-6 19.6 19.6 0 0 1-3-8.6A2 2 0 0 1 3.3 2H6a2 2 0 0 1 2 1.7c.1 1.1.4 2.1.7 3.1a2 2 0 0 1-.5 2.1L7.1 10a16 16 0 0 0 6 6l1.1-1.1a2 2 0 0 1 2.1-.5c1 .4 2 .6 3.1.7a2 2 0 0 1 1.7 2z"/></svg>
+    전화 상담 <span class="num">010-3287-1007</span>
+  </a>
+  <a class="btn btn--ghost" href="sms:010-3287-1007">
+    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9.6 9.6 0 0 1-2.8-.4L4 21l1.6-4.4A8.2 8.2 0 0 1 3 11.5a8.4 8.4 0 0 1 9-8.4 8.4 8.4 0 0 1 9 8.4z"/></svg>
+    문자 문의
+  </a>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.querySelector(".site-header");
+  var onScroll = function () {
+    if (window.scrollY > 8) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  };
+  onScroll();
+  window.addEventListener("scroll", onScroll, { passive: true });
+
+  /* ---- Mobile menu ---- */
+  var toggle = document.getElementById("menuToggle");
+  var menu = document.getElementById("mobileMenu");
+  function setMenu(open) {
+    toggle.setAttribute("aria-expanded", String(open));
+    menu.classList.toggle("is-open", open);
+  }
+  toggle.addEventListener("click", function () {
+    setMenu(toggle.getAttribute("aria-expanded") !== "true");
+  });
+  menu.addEventListener("click", function (e) {
+    if (e.target.closest("a")) setMenu(false);
+  });
+  document.addEventListener("keydown", function (e) {
+    if (e.key === "Escape" && menu.classList.contains("is-open")) {
+      setMenu(false);
+      toggle.focus();
+    }
+  });
+  window.addEventListener("resize", function () {
+    if (window.innerWidth > 920) setMenu(false);
+  });
+
+  /* ---- Program filter ---- */
+  var buttons = Array.prototype.slice.call(document.querySelectorAll(".filter-btn"));
+  var cards = Array.prototype.slice.call(document.querySelectorAll("#programGrid .program"));
+  var status = document.getElementById("filterStatus");
+  var labels = { all: "전체", rhythm: "음악 · 리듬", cognition: "인지 · 미술", health: "웃음 · 건강" };
+
+  function applyFilter(key) {
+    var shown = 0;
+    cards.forEach(function (card) {
+      var match = key === "all" || card.getAttribute("data-cat") === key;
+      card.classList.toggle("is-hidden", !match);
+      if (match) shown++;
+    });
+    buttons.forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.getAttribute("data-filter") === key));
+    });
+    if (status) {
+      status.textContent = key === "all"
+        ? "전체 " + shown + "개 프로그램을 보여 드리고 있습니다."
+        : labels[key] + " 수업 " + shown + "개를 보여 드리고 있습니다.";
+    }
+  }
+
+  buttons.forEach(function (b) {
+    b.addEventListener("click", function () {
+      applyFilter(b.getAttribute("data-filter"));
+    });
+  });
+
+  /* ---- FAQ accordion ---- */
+  var faqButtons = Array.prototype.slice.call(document.querySelectorAll(".faq-q"));
+  faqButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var panel = document.getElementById(btn.getAttribute("aria-controls"));
+      var item = btn.closest(".faq-item");
+      var isOpen = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!isOpen));
+      panel.hidden = isOpen;
+      item.classList.toggle("is-open", !isOpen);
+    });
+  });
+
+  /* ---- Copy inquiry template ---- */
+  var tpl = document.getElementById("inquiryTemplate");
+  var copyBtn = document.getElementById("copyBtn");
+  var copyStatus = document.getElementById("copyStatus");
+  var resetTimer = null;
+
+  function announce(msg) {
+    if (!copyStatus) return;
+    copyStatus.textContent = msg;
+    if (resetTimer) clearTimeout(resetTimer);
+    resetTimer = setTimeout(function () { copyStatus.textContent = ""; }, 4000);
+  }
+
+  function legacyCopy() {
+    tpl.focus();
+    tpl.select();
+    tpl.setSelectionRange(0, tpl.value.length);
+    var ok = false;
+    try { ok = document.execCommand("copy"); } catch (err) { ok = false; }
+    return ok;
+  }
+
+  if (copyBtn && tpl) {
+    copyBtn.addEventListener("click", function () {
+      var text = tpl.value;
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(function () {
+          announce("문의 문구를 복사했습니다. 문자 앱에 붙여 넣어 주세요.");
+        }).catch(function () {
+          announce(legacyCopy()
+            ? "문의 문구를 복사했습니다. 문자 앱에 붙여 넣어 주세요."
+            : "복사가 되지 않으면 문구를 길게 눌러 직접 복사해 주세요.");
+        });
+      } else {
+        announce(legacyCopy()
+          ? "문의 문구를 복사했습니다. 문자 앱에 붙여 넣어 주세요."
+          : "복사가 되지 않으면 문구를 길게 눌러 직접 복사해 주세요.");
+      }
+    });
+  }
+})();
+</script>
+</body>
+</html>
