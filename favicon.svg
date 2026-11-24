@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="브라보실버">
+  <title>브라보실버</title>
+  <rect width="64" height="64" rx="16" fill="#1D4D3B"/>
+  <g transform="translate(8 8)">
+    <path d="M24 33.4c-6.4-4.1-11.4-7.9-11.4-12.5a6.1 6.1 0 0 1 11.4-3.1 6.1 6.1 0 0 1 11.4 3.1c0 4.6-5 8.4-11.4 12.5z" fill="#D9822B"/>
+    <path d="M17 37.4h14" stroke="#FAF7F2" stroke-width="2.2" stroke-linecap="round" opacity=".55"/>
+  </g>
+</svg>
